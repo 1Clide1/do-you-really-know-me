@@ -1,0 +1,4 @@
+**/*.cjs
+**/*.mjs
+src/env.mjs
+_eslintrc.cjs

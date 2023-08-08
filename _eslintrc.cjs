@@ -1,8 +1,14 @@
 /** @type {import("eslint").Linter.Config} */
+
 const config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: true,
+    sourceType: "module",
+    ecmaVersion: "latest",
+  },
+  env: {
+    es6: true,
   },
   plugins: ["@typescript-eslint"],
   extends: [
@@ -25,6 +31,12 @@ const config = {
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
   },
+  ignorePatterns: ["**/*.cjs", "**/*.mjs", ".mjs", ".cjs"],
+  overrides: [
+    {
+      files: ["**/*.{ts,tsx,js,jsx}"],
+    },
+  ],
 };
 
 module.exports = config;
